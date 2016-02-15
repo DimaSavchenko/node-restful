@@ -63,7 +63,7 @@ router.route('/bears')
 			res.json(bears);
 		});*/
 
-		res.json({ name: 'Ivan' });
+		res.json({ name: 'Ivan2' });
 	});
 /*
 router.route('/bears/:bear_id')
