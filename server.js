@@ -18,7 +18,7 @@ var port = Number(process.env.PORT || 8080);
 var mongoose = require('mongoose');
 
 // connect to database
-mongoose.connect(' mongodb://dima:123@ds039135.mongolab.com:39135/heroku_xkbthxdx');
+mongoose.connect('mongodb://dima:123@ds039135.mongolab.com:39135/heroku_xkbthxdx');
 
 var Bear = require('./app/models/bear');
 
