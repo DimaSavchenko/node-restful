@@ -13,14 +13,14 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8080;
+var port = Number(process.env.PORT || 8080);
 
-var mongoose = require('mongoose');
+//var mongoose = require('mongoose');
 
 // connect to database
-mongoose.connect('mongodb://localhost/test');
+//mongoose.connect('mongodb://localhost/test');
 
-var Bear = require('./app/models/bear');
+//var Bear = require('./app/models/bear');
 
 // ROUTES
 var router = express.Router();
@@ -36,7 +36,7 @@ router.get('/', function(req, res) {
 });
 
 router.route('/bears')
-
+/*
 	.post(function(req, res) {
 
 		var bear = new Bear();
@@ -51,9 +51,9 @@ router.route('/bears')
 
 
 	})
-
+*/
 	.get(function(req, res) {
-		Bear.find(function(err, bears) {
+		/*Bear.find(function(err, bears) {
 			if (err) {
 
 				res.send(err);
@@ -61,9 +61,11 @@ router.route('/bears')
 			}
 			console.log(bears);
 			res.json(bears);
-		});
-	});
+		});*/
 
+		res.json({ name: 'Ivan' });
+	});
+/*
 router.route('/bears/:bear_id')
 
 	.get(function(req, res) {
@@ -101,10 +103,10 @@ router.route('/bears/:bear_id')
 			res.json({ message: 'Successfully deleted' });
 		});
 	});
-
+*/
 
 // REGISTER ROUTES
-app.use('/api', router);
+app.use('/', router);
 
 // START THE SERVER
 app.listen(port);
