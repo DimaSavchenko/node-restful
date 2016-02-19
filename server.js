@@ -13,7 +13,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = Number(process.env.MONGOLAB_URI || 8080);
+var port = Number(process.env.PORT || 8080);
 
 var mongoose = require('mongoose');
 
