@@ -13,13 +13,12 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = Number(process.env.PORT || 8080);
+var port = Number(process.env.MONGOLAB_URI || 8080);
 
 var mongoose = require('mongoose');
 
 // connect to database
-//mongoose.connect('mongodb://dima:123@ds039135.mongolab.com:39135/heroku_xkbthxdx');
-mongoose.connect(process.env.MONGOLAB_URI);
+mongoose.connect('mongodb://dima:123@ds039135.mongolab.com:39135/Bear');
 
 var Bear = require('./app/models/bear');
 
